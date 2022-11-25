@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculatrice</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/script.js"></script>
+    <script src="https://kit.fontawesome.com/27a5051561.js" crossorigin="anonymous"></script>
+</head>
+<body onload=showDate(),showBattery()>
+
+    <div class="box" id="calc">
+
+        <div class="top-bar">
+
+            <div class="time"><p id="time"></p></div>
+
+            <div class="notch">
+
+                <div class="camera">
+                    <div class="interior"></div>
+                </div>
+            </div>
+
+            <div class="icons">
+                 <i class="fa-solid fa-signal fa-2xs" style="color: white;"></i>
+                 <i class="fa-solid fa-wifi fa-2xs" style="color: white;"></i>
+                 <p id="battery" style="color: white;"></p>
+            </div>
+
+        </div>
+
+        <div class="screen">
+            <input type="text" value="0" readonly="readonly" name="calcResult" id="calcResult" class="calcResult" onkeydown="keyTrigger('calcResult',event);">
+        </div>
+
+
+        <div class="element">
+
+            <!-- FIRST ROW -->
+
+            <button class="button option" type="button" value="ac" onclick="calculate('calcResult','ac');">AC</button>
+
+            <button class="button option" type="button" value="mol" onclick="calculate('calcResult','mol');">+/-</button>
+
+            <button class="button option" type="button" value="%" onclick="calculate('calcResult','%');">%</button>
+
+            <button class="button operator" id="operator_/"  id="test" type="button" value="/" onclick="calculate('calcResult','/');">/</button>
+
+            <!-- SECOND ROW -->
+
+            <button class="button number" type="button" value="7" onclick="add_calc('calcResult','7');">7</button>
+
+            <button class="button number" type="button" value="8" onclick="add_calc('calcResult','8');">8</button>
+
+            <button class="button number" type="button" value="9" onclick="add_calc('calcResult','9');">9</button>
+
+            <button class="button operator" id="operator_*"  id="test" type="button" value="*" onclick="calculate('calcResult','*');">x</button>
+
+            <!-- THIRD ROW -->
+
+            <button class="button number" type="button" value="4" onclick="add_calc('calcResult','4');">4</button>
+
+            <button class="button number" type="button" value="5" onclick="add_calc('calcResult','5');">5</button>
+
+            <button class="button number" type="button" value="6" onclick="add_calc('calcResult','6');">6</button>
+
+            <button class="button operator" id="operator_-"  id="test" type="button" value="-" onclick="calculate('calcResult','-');">-</button>
+
+            <!-- FOURTH ROW -->
+
+            <button class="button number" type="button" value="1" onclick="add_calc('calcResult','1');">1</button>
+
+            <button class="button number" type="button" value="2" onclick="add_calc('calcResult','2');">2</button>
+
+            <button class="button number" type="button" value="3" onclick="add_calc('calcResult','3');">3</button>
+
+            <button class="button operator" id="operator_+"  id="test" type="button" value="+" onclick="calculate('calcResult','+');">+</button>
+
+            <!-- FITH ROW -->
+
+            <button class="button number zero" type="button" value="0" onclick="add_calc('calcResult','0')">0</button>
+
+            <button class="button number" type="button" value="," onclick="calculate('calcResult',',');">,</button>
+
+            <button class="button operator" type="button" value="=" onclick="calculate('calcResult','=');">=</button>
+
+    </div>
+
+    <div class="span"></div>
+
+    </div>
+    <script type="text/javascript">
+        document.getElementById("calcResult").onload=updateDisplay("calcResult");
+</script>
+</body>
+</html>
